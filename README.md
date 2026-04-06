@@ -6,33 +6,17 @@
 
 이 프로젝트는 원불교 교화 훈련 프로그램(3040세대 대상)에 참여하는 교도들이 쉽고 편리하게 훈련 정보를 확인하고, 일정을 관리하며, 공동체와 소통할 수 있도록 돕기 위해 만들어졌습니다.
 
-## 주요 기능 (예정)
-
-- 훈련 일정 및 공지사항 확인
-- 참여자 등록 및 정보 관리
-- 훈련 자료 및 법문 열람
-- 소감 나눔 및 소통 공간
-
 ## 기술 스택
 
-- HTML / CSS / JavaScript (프론트엔드)
-- 추후 확장 예정
+- React + Vite + TypeScript
+- GitHub Pages 배포
 
 ## 시작하기
 
 ```bash
-# 저장소 클론
-git clone https://github.com/wonbuddhism/3040gyohwa.git
-
-# 폴더 이동
-cd 3040gyohwa
-
-# index.html을 브라우저에서 열기
+npm install
+npm run dev
 ```
-
-## 기여
-
-개선 사항이나 의견은 Issues 또는 Pull Request로 남겨주세요.
 
 ---
 원불교 | 교화훈련부
