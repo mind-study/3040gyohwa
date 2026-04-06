@@ -40,7 +40,7 @@ export const programs: ProgramSession[] = [
     together: [
       {
         target: '온 가족',
-        title: '환상의 마술쇼',
+        title: '마술로 여는 마음의 문',
         description: '우리 가족, 다 함께 웃으며 마음을 활짝 열어요',
         mainCopy:
           '마법 같은 소통의 마법사, 홍미선 강사님과 함께 가족들 마음의 문을 활짝 열어보세요!',
