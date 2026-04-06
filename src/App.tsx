@@ -1,11 +1,17 @@
+import { useCallback, useState } from 'react'
 import Header from './components/Header'
 import ProgramCard from './components/ProgramCard'
+import Modal from './components/Modal'
 import Footer from './components/Footer'
 import { LeafDecoration } from './components/Illustrations'
 import { programs } from './data/programs'
+import type { ProgramItem } from './data/programs'
 import './App.css'
 
 export default function App() {
+  const [selectedItem, setSelectedItem] = useState<ProgramItem | null>(null)
+  const handleClose = useCallback(() => setSelectedItem(null), [])
+
   return (
     <div className="app">
       <Header />
@@ -17,11 +23,16 @@ export default function App() {
         </div>
         <div className="card-grid">
           {programs.map((program) => (
-            <ProgramCard key={program.month} program={program} />
+            <ProgramCard
+              key={program.month}
+              program={program}
+              onItemClick={setSelectedItem}
+            />
           ))}
         </div>
       </main>
       <Footer />
+      <Modal item={selectedItem} onClose={handleClose} />
     </div>
   )
 }

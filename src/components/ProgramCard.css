@@ -199,6 +199,33 @@
   line-height: 1.6;
 }
 
+.program-item.clickable {
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.program-item.clickable:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.program-item.clickable:active {
+  transform: scale(0.98);
+}
+
+.item-more {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #999;
+  transition: color 0.15s;
+}
+
+.program-item.clickable:hover .item-more {
+  color: #555;
+}
+
 @media (max-width: 600px) {
   .card-header {
     padding: 16px 20px;

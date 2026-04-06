@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import type { ProgramSession } from '../data/programs'
+import type { ProgramSession, ProgramItem } from '../data/programs'
 import { getGoogleCalendarUrl, downloadICS } from '../utils/calendar'
 import './ProgramCard.css'
 
 type Props = {
   program: ProgramSession
+  onItemClick: (item: ProgramItem) => void
 }
 
 const typeColors: Record<string, string> = {
@@ -27,7 +28,7 @@ function buildDescription(program: ProgramSession): string {
   return lines.join('\n')
 }
 
-export default function ProgramCard({ program }: Props) {
+export default function ProgramCard({ program, onItemClick }: Props) {
   const { month, date, type, icon, together, adult, child } = program
   const [showCalMenu, setShowCalMenu] = useState(false)
   const description = buildDescription(program)
@@ -79,33 +80,36 @@ export default function ProgramCard({ program }: Props) {
         </div>
 
         {together?.map((item, i) => (
-          <div key={i} className="program-item item-together">
+          <div key={i} className="program-item item-together clickable" onClick={() => onItemClick(item)}>
             <div className="item-header">
               <span className="item-tag tag-together">👨‍👩‍👧‍👦 {item.target}</span>
             </div>
             <h3 className="item-title">{item.title}</h3>
             <p className="item-desc">{item.description}</p>
+            <span className="item-more">자세히 보기 &rarr;</span>
           </div>
         ))}
 
         {(adult || child) && (
           <div className="separate-programs">
             {adult?.map((item, i) => (
-              <div key={i} className="program-item item-adult">
+              <div key={i} className="program-item item-adult clickable" onClick={() => onItemClick(item)}>
                 <div className="item-header">
                   <span className="item-tag tag-adult">🧘 {item.target}</span>
                 </div>
                 <h3 className="item-title">{item.title}</h3>
                 <p className="item-desc">{item.description}</p>
+                <span className="item-more">자세히 보기 &rarr;</span>
               </div>
             ))}
             {child?.map((item, i) => (
-              <div key={i} className="program-item item-child">
+              <div key={i} className="program-item item-child clickable" onClick={() => onItemClick(item)}>
                 <div className="item-header">
                   <span className="item-tag tag-child">🧒 {item.target}</span>
                 </div>
                 <h3 className="item-title">{item.title}</h3>
                 <p className="item-desc">{item.description}</p>
+                <span className="item-more">자세히 보기 &rarr;</span>
               </div>
             ))}
           </div>

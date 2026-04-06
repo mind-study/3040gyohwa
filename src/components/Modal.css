@@ -1,0 +1,361 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+  animation: overlayFadeIn 0.2s ease-out;
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 20px;
+  max-width: 480px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  animation: modalSlideUp 0.25s ease-out;
+}
+
+.modal-content.modal-rich {
+  max-width: 540px;
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  font-size: 1.8rem;
+  color: #999;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background 0.15s, color 0.15s;
+  z-index: 1;
+}
+
+.modal-close:hover {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.modal-header {
+  padding: 28px 28px 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.modal-tag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 12px;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.modal-tag-together {
+  background: #42A5F5;
+}
+
+.modal-tag-adult {
+  background: #FF9800;
+}
+
+.modal-tag-child {
+  background: #66BB6A;
+}
+
+.modal-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #222;
+  margin-bottom: 8px;
+  line-height: 1.4;
+  padding-right: 32px;
+}
+
+.modal-desc {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* ── 강사 정보 ── */
+.modal-instructor {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 28px;
+  background: linear-gradient(135deg, #FFF8E1, #FFF3E0);
+  border-bottom: 1px solid #f0e0c0;
+}
+
+.instructor-photo-wrapper {
+  flex-shrink: 0;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #FFB74D;
+  box-shadow: 0 4px 16px rgba(255, 152, 0, 0.2);
+}
+
+.instructor-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.instructor-info {
+  flex: 1;
+}
+
+.instructor-label {
+  font-size: 0.78rem;
+  color: #FF8F00;
+  font-weight: 600;
+  margin-bottom: 4px;
+  letter-spacing: 1px;
+}
+
+.instructor-name {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+.instructor-subtitle {
+  font-size: 0.82rem;
+  color: #888;
+  line-height: 1.4;
+}
+
+/* ── 메인 카피 ── */
+.modal-main-copy {
+  padding: 20px 28px;
+  background: linear-gradient(135deg, #E8F5E9, #C8E6C9);
+  border-bottom: 1px solid #A5D6A7;
+}
+
+.modal-main-copy p {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #2E7D32;
+  line-height: 1.7;
+  text-align: center;
+  font-style: italic;
+  margin: 0;
+}
+
+/* ── 프로그램 섹션 ── */
+.modal-sections {
+  padding: 24px 28px;
+}
+
+.modal-section {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+}
+
+.modal-section + .modal-section {
+  border-top: 1px dashed #e0e0e0;
+}
+
+.section-icon-badge {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, #FFF3E0, #FFE0B2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: 0 2px 8px rgba(255, 152, 0, 0.15);
+}
+
+.section-content {
+  flex: 1;
+}
+
+.section-heading {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.section-body {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── 강사 약력 ── */
+.modal-credentials {
+  padding: 20px 28px 28px;
+  background: #FAFAFA;
+  border-top: 1px solid #f0f0f0;
+  border-radius: 0 0 20px 20px;
+}
+
+.credentials-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #666;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.credentials-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.credentials-list li {
+  font-size: 0.83rem;
+  color: #555;
+  padding: 5px 0 5px 16px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.credentials-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 6px;
+  height: 6px;
+  background: #FFB74D;
+  border-radius: 50%;
+}
+
+/* ── 일반 상세 텍스트 ── */
+.modal-body {
+  padding: 20px 28px 28px;
+}
+
+.modal-line {
+  font-size: 0.92rem;
+  color: #444;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.modal-spacer {
+  height: 12px;
+  margin: 0;
+}
+
+/* ── 반응형 ── */
+@media (max-width: 600px) {
+  .modal-overlay {
+    padding: 12px;
+    align-items: flex-end;
+  }
+
+  .modal-content {
+    max-height: 85vh;
+    border-radius: 20px 20px 8px 8px;
+    animation: modalSlideUpMobile 0.25s ease-out;
+  }
+
+  .modal-content.modal-rich {
+    max-width: 100%;
+  }
+
+  @keyframes modalSlideUpMobile {
+    from {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .modal-header {
+    padding: 24px 20px 16px;
+  }
+
+  .modal-title {
+    font-size: 1.2rem;
+  }
+
+  .modal-instructor {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .instructor-photo-wrapper {
+    width: 72px;
+    height: 72px;
+  }
+
+  .instructor-name {
+    font-size: 1.1rem;
+  }
+
+  .modal-main-copy {
+    padding: 16px 20px;
+  }
+
+  .modal-sections {
+    padding: 16px 20px;
+  }
+
+  .modal-section {
+    gap: 12px;
+    padding: 12px 0;
+  }
+
+  .section-icon-badge {
+    width: 36px;
+    height: 36px;
+    font-size: 1.1rem;
+  }
+
+  .modal-credentials {
+    padding: 16px 20px 24px;
+  }
+
+  .modal-body {
+    padding: 16px 20px 24px;
+  }
+}
